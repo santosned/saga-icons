@@ -45,7 +45,7 @@ function stringify(schema) {
  *
  * @param {{tag: string, attributes: any, children: any}} svgSchema an object containing the SVG properties.
  * @param {number|undefined} nestedNode the number of nested nodes.
- * @return {string} an string containing the transformed properties.
+ * @return {Promise<string>} an string containing the transformed properties.
  */
 async function make(svgSchema, nestedNode) {
   if (!svgSchema) return undefined
