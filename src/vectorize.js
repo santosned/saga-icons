@@ -70,7 +70,7 @@ async function make(svgSchema, nestedNode) {
  *
  * @param {{tag: string, attributes: any, children: any}} vectorSchema an object containing the SVG properties.
  * @param {{tag: string, attributes: any, children: any}[]} optionalParams additional object containing the SVG properties.
- * @return {string[]} an array with all the objects given transformed into an string.
+ * @return {Promise<string>} an string containing the SVG format properties.
  */
 async function vectorize(vectorSchema, ...optionalParams) {
   const schemas = [vectorSchema, ...optionalParams]
