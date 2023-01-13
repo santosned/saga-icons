@@ -1,6 +1,6 @@
 {
   "name": "saga-icons",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Open-source collection of optimized SVG icons",
   "scripts": {
     "build": "node ./src/index.js",
