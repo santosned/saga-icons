@@ -22,7 +22,7 @@ async function build(variantSchema, buildOptions = { xml: false }) {
 
   const vectors = await Promise.all(
     schemas.map(async (value, index) => {
-      const { keywords, svg: pathSchema } = variantSchema.icons[index]
+      const { keywords, drawn } = variantSchema.icons[index]
 
       const filename = `${keywords.join('-')}-${size}x${size}`
 
@@ -37,7 +37,12 @@ async function build(variantSchema, buildOptions = { xml: false }) {
         childNodes: [
           {
             tag: 'g',
-            childNodes: pathSchema instanceof Array ? pathSchema : [pathSchema],
+            childNodes: [
+              {
+                tag: 'path',
+                attributes: { d: drawn },
+              },
+            ],
           },
         ],
       }
