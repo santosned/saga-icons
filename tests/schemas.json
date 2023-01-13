@@ -1,0 +1,54 @@
+{
+  "mock": {
+    "name": "mock",
+    "icons": [
+      {
+        "keywords": ["test", "mock"],
+        "svg": {
+          "tag": "path",
+          "attributes": {
+            "d": "C 1.111 Z"
+          }
+        }
+      },
+      {
+        "keywords": ["test", "mock"],
+        "svg": [
+          {
+            "tag": "path",
+            "attributes": {
+              "d": "C 1.111 Z"
+            }
+          },
+          {
+            "tag": "path",
+            "attributes": {
+              "d": "C 2.222 Z"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "SVGSchema": {
+    "tag": "svg",
+    "attributes": {
+      "viewBox": "0 0 24 24",
+      "width": "24",
+      "height": "24"
+    },
+    "childNodes": [
+      {
+        "tag": "g",
+        "childNodes": [
+          {
+            "tag": "path",
+            "attributes": {
+              "d": "C 1.111 Z"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
