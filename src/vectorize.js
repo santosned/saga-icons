@@ -10,11 +10,13 @@ async function attributeToString(attributes) {
 
   const attrib = await Promise.all(
     attribKeys.map(async (key) => {
+      if (!attributes[key]) return undefined
+
       return `${key}="${attributes[key]}"`
     })
   )
 
-  return attrib.join(' ')
+  return Promise.resolve(attrib.filter((v) => typeof v === 'string').join(' '))
 }
 
 /**
