@@ -4,29 +4,7 @@
     "icons": [
       {
         "keywords": ["test", "mock"],
-        "svg": {
-          "tag": "path",
-          "attributes": {
-            "d": "C 1.111 Z"
-          }
-        }
-      },
-      {
-        "keywords": ["test", "mock"],
-        "svg": [
-          {
-            "tag": "path",
-            "attributes": {
-              "d": "C 1.111 Z"
-            }
-          },
-          {
-            "tag": "path",
-            "attributes": {
-              "d": "C 2.222 Z"
-            }
-          }
-        ]
+        "drawn": "C 1.111 Z"
       }
     ]
   },
