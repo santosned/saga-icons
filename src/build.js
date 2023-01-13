@@ -4,13 +4,16 @@ const vectorize = require('./vectorize')
  * Builds the icon schema into an clean and valid SVG format.
  *
  * @param {object} variantSchema the icon variant schema.
- * @param {{xml: boolean, size: string}} buildOptions the build options to control icon size or XML compatibility.
+ * @param {{xml: boolean}} buildOptions the build options to control XML compatibility.
  * @return {Promise<{variant: string, icons: any[]}>} returns the variant name and all the SVG icons.
  */
-async function build(variantSchema, buildOptions) {
-  const { xml, size } = buildOptions
+async function build(variantSchema, buildOptions = { xml: false }) {
+  const { xml } = buildOptions
 
-  const getFilename = (k) => `${k}-${size}x${size}`
+  /**
+   * The `width` and `height` of the SVG icons to be generated.
+   */
+  const size = 24
 
   const variant = variantSchema.name
   const schemas = Object.keys(variantSchema.icons)
@@ -21,7 +24,7 @@ async function build(variantSchema, buildOptions) {
     schemas.map(async (value, index) => {
       const { keywords, svg: pathSchema } = variantSchema.icons[index]
 
-      const filename = getFilename(keywords.join('-'))
+      const filename = `${keywords.join('-')}-${size}x${size}`
 
       const SVGSchema = {
         tag: 'svg',
