@@ -18,7 +18,7 @@ async function build(variantSchema, buildOptions = { xml: false }) {
   const variant = variantSchema.name
   const schemas = Object.keys(variantSchema.icons)
 
-  let XMLSchema = undefined
+  const XMLSchema = !xml ? undefined : require('./schemas/XML.json')
 
   const vectors = await Promise.all(
     schemas.map(async (value, index) => {
@@ -32,6 +32,7 @@ async function build(variantSchema, buildOptions = { xml: false }) {
           viewBox: `0 0 ${size} ${size}`,
           width: size,
           height: size,
+          xmlns: xml ? 'http://www.w3.org/2000/svg' : undefined,
         },
         childNodes: [
           {
@@ -39,15 +40,6 @@ async function build(variantSchema, buildOptions = { xml: false }) {
             childNodes: pathSchema instanceof Array ? pathSchema : [pathSchema],
           },
         ],
-      }
-
-      if (xml) {
-        XMLSchema = require('./schemas/XML.json')
-
-        SVGSchema.attributes = {
-          ...SVGSchema.attributes,
-          ...{ xmlns: 'http://www.w3.org/2000/svg' },
-        }
       }
 
       return {
