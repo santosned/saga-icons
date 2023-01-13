@@ -28,8 +28,6 @@ async function attributeToString(attributes) {
 function stringify(schema) {
   const { tag } = schema
 
-  if (!tag) return ''
-
   let attrib = typeof schema.attributes !== 'string' ? '' : schema.attributes
   const children = typeof schema.children !== 'string' ? '' : schema.children
 
@@ -50,21 +48,37 @@ function stringify(schema) {
  * @return {Promise<string>} an string containing the transformed properties.
  */
 async function make(svgSchema, nestedNode) {
-  if (!svgSchema) return undefined
+  try {
+    if (typeof svgSchema !== 'object') {
+      throw new TypeError(`${typeof svgSchema} isn't an valid SVG schema`)
+    }
 
-  const currentNestedNode = nestedNode ?? 0
-  const { tag, childNodes } = svgSchema
-  const attributes = await attributeToString(svgSchema.attributes)
-  let children = undefined
+    if (!svgSchema.tag && !svgSchema.childNodes) {
+      throw new TypeError("couldn't find tag or childNodes properties")
+    }
 
-  if (childNodes instanceof Array) {
-    const nodes = await Promise.all(
-      childNodes.map(async (nodes) => await make(nodes, currentNestedNode + 1))
-    )
-    children = nodes.join('')
+    const currentNestedNode = nestedNode ?? 0
+    const { tag, childNodes } = svgSchema
+
+    const attributes = await attributeToString(svgSchema.attributes)
+
+    let children = undefined
+
+    if (childNodes instanceof Array) {
+      const nodes = await Promise.all(
+        childNodes.map(
+          async (nodes) => await make(nodes, currentNestedNode + 1)
+        )
+      )
+      children = nodes.join('')
+    }
+
+    if (!tag && children) return Promise.resolve(`${children}`)
+
+    return Promise.resolve(stringify({ tag, attributes, children }))
+  } catch (error) {
+    return Promise.reject(error)
   }
-
-  return Promise.resolve(stringify({ tag, attributes, children }))
 }
 
 /**
@@ -75,13 +89,23 @@ async function make(svgSchema, nestedNode) {
  * @return {Promise<string>} an string containing the SVG format properties.
  */
 async function vectorize(vectorSchema, ...optionalParams) {
-  const schemas = [vectorSchema, ...optionalParams]
-
-  const vectors = await Promise.all(
-    schemas.map(async (schema) => await make(schema))
+  const schemas = [vectorSchema, ...optionalParams].filter(
+    (v) => typeof v === 'object'
   )
 
-  return vectors.join('')
+  try {
+    if (!schemas.length) {
+      throw new TypeError('vectorize expects one or more vector schemas.')
+    }
+
+    const vectors = await Promise.all(
+      schemas.map(async (schema) => await make(schema))
+    )
+
+    return Promise.resolve(vectors.join(''))
+  } catch (error) {
+    return Promise.reject(error)
+  }
 }
 
 module.exports = vectorize
