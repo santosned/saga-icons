@@ -3,6 +3,6 @@ const exportFiles = require('./exportFiles')
 
 const solid = require('./schemas/solid.json')
 
-build(solid, { xml: false, size: '24' })
+build(solid)
   .then((data) => exportFiles(data))
   .catch(() => process.exit(1))
