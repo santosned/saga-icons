@@ -4,7 +4,6 @@ about: Update an existing icon or introduce a new one.
 title: "\U0001F64B The icons request title..."
 labels: enhancement, new icons
 assignees: santosned
-
 ---
 
 **Does the icon already exists?**
