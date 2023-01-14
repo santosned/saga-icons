@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "Open-source collection of optimized SVG icons",
   "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint --exit-on-fatal-error --color --ext .js --fix .",
     "build": "node ./src/index.js -o ./icons",
     "test": "jest"
   },
