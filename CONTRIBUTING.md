@@ -58,12 +58,9 @@ Saga Icons uses [Node.js](https://nodejs.org/en/about/) to generate icons, so if
 
 ### Build system
 
-```mermaid
-graph TD
-    A[JSON schema] --> B
-    B{Build SVG} --> D
-    D[Export SVG]
-```
+<div align="center">
+  <img alt="Saga Icons Build system" src="docs/assets/build-system-diagram.webp">
+</div>
 
 The build system should be able to asynchronously generate multiple customizable [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) files from one simple [JSON](src/schemas/solid.json) file.
 
