@@ -8,14 +8,14 @@ const vectorize = require('./vectorize')
  * @return {Promise<{variant: string, icons: any[]}>} returns the variant name and all the SVG icons.
  */
 async function build(variantSchema, buildOptions = { xml: false }) {
-  const { xml } = buildOptions
+  const xml = buildOptions.xml ? true : false
 
   /**
    * The `width` and `height` of the SVG icons to be generated.
    */
   const size = 24
 
-  const variant = variantSchema.name
+  const variant = `${variantSchema.name}/${xml ? 'xml' : 'web'}-icons`
   const schemas = Object.keys(variantSchema.icons)
 
   const XMLSchema = !xml ? undefined : require('./schemas/XML.json')

@@ -5,12 +5,13 @@ const path = require('path')
  * Asynchronously export multiple SVG files inside the `dist` folder.
  *
  * @param {{variant: string, icons: any[]}} data the data returned by the `build` function.
+ * @param {string} to the path to export the files (Default: dist).
  * @return {undefined} Fullfills with `undefined` on success.
  */
-async function exportFiles(data) {
+async function exportFiles(data, to = 'dist') {
   try {
     const { variant, icons } = data
-    const outDir = path.resolve(__dirname, '../dist', variant)
+    const outDir = path.resolve(__dirname, '../', to, variant)
 
     await fs.mkdir(outDir, { recursive: true })
 
