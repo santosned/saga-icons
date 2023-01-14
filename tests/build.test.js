@@ -7,7 +7,7 @@ describe('build', () => {
 
     expect(data).toHaveProperty('variant')
     expect(data).toHaveProperty('icons')
-    expect(data.variant).toBe('mock')
+    expect(data.variant).toBe('mock/web-icons')
     expect(data.icons).toHaveLength(schemas.mock.icons.length)
   })
 
@@ -24,6 +24,10 @@ describe('build', () => {
 
   it('supports XML compatible vectors', async () => {
     const data = await build(schemas.mock, { xml: true })
+
+    expect(data).toHaveProperty('variant')
+    expect(data).toHaveProperty('icons')
+    expect(data.variant).toBe('mock/xml-icons')
 
     const { svg, filename } = data.icons[0]
 
