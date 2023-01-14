@@ -22,7 +22,7 @@ Hi! Thanks for the interest in contributing 🤗
 
 ## License
 
-🤝 By contributing, you agree that your contributions will be licensed under the MIT license.
+🤝 By contributing, you agree that your contributions will be licensed under the [project license](LICENSE.txt).
 
 ## Github
 
@@ -65,7 +65,7 @@ graph TD
     D[Export SVG]
 ```
 
-The build system should be able to asynchronously generate multiple customizable [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) files from one simple [JSON](../src/schemas/solid.json) file.
+The build system should be able to asynchronously generate multiple customizable [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) files from one simple [JSON](src/schemas/solid.json) file.
 
 You are welcome to contribute to the improvement of this process by fixing bugs, improving performance, typos, documentation, or workflow.
 
@@ -106,9 +106,9 @@ The example above, using the build script, would generate something like (`dist/
 <svg viewBox="0 0 24 24" width="24" height="24"><g><path d="C 1.111 Z"/></g></svg>
 ```
 
-The [d (drawn)](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d) attribute is the only thing from the [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) icons that are stored inside the [schema](../src/schemas/solid.json).
+The [d (drawn)](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d) attribute is the only thing from the [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) icons that are stored inside the [schema](src/schemas/solid.json).
 
-This allows us to maintain a clean [schema](../src/schemas/solid.json) file whilst easily customizing and generating hundreds of [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) files.
+This allows us to maintain a clean [schema](src/schemas/solid.json) file whilst easily customizing and generating hundreds of [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) files.
 
 ### SVG designs
 
@@ -117,7 +117,7 @@ If you're a designer, remember to setup your SVG editor (e.g. [inkscape](https:/
 - SVG [viewBox="0 0 24 24"](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox) together with height and width of `24` pixels;
 - Max vector element [height](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/height) and [width](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/width) of `16` pixels;
 
-Before adding to the [schema file](../src/schemas/solid.json) make sure that the follow are met:
+Before adding to the [schema file](src/schemas/solid.json) make sure that the follow are met:
 
 - Convert your vector to a single [path](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path) element;
 - Make sure there's no additional styles (e.g. [strokes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes)) or [transform attributes](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform).
