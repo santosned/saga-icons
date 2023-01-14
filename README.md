@@ -18,7 +18,7 @@ There are lots of ways in which you can contribute in this project, for example:
 - [Reviewing code changes](https://github.com/santosned/saga-icons/pulls)
 - [Reviewing documentations](/docs/) and [making pull requests](https://github.com/santosned/saga-icons/pulls) for typos or additional contents
 
-If you are interested in help fixing issues and contributing directly with the source code, please take a loook at [How To Contribute](docs/CONTRIBUTION.md).
+If you are interested in help fixing issues and contributing directly with the source code, please take a loook at [How To Contribute](CONTRIBUTING.md).
 
 ## Feedback
 
