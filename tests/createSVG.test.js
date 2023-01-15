@@ -1,9 +1,9 @@
-const build = require('../src/build.js')
+const createSVG = require('../src/createSVG.js')
 const schemas = require('./schemas.json')
 
-describe('build', () => {
+describe('createSVG', () => {
   it('instantiate with the mock schema', async () => {
-    const data = await build(schemas.mock)
+    const data = await createSVG(schemas.mock)
 
     expect(data).toHaveProperty('variant')
     expect(data).toHaveProperty('icons')
@@ -12,7 +12,7 @@ describe('build', () => {
   })
 
   it('generates valid icons', async () => {
-    const data = await build(schemas.mock)
+    const data = await createSVG(schemas.mock)
 
     const { svg, filename } = data.icons[0]
 
@@ -23,7 +23,7 @@ describe('build', () => {
   })
 
   it('supports XML compatible vectors', async () => {
-    const data = await build(schemas.mock, { xml: true })
+    const data = await createSVG(schemas.mock, { xml: true })
 
     expect(data).toHaveProperty('variant')
     expect(data).toHaveProperty('icons')

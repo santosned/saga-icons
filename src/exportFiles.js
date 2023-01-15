@@ -4,7 +4,7 @@ const path = require('path')
 /**
  * Asynchronously export multiple SVG files inside the `dist` folder.
  *
- * @param {{variant: string, icons: any[]}} data the data returned by the `build` function.
+ * @param {{variant: string, icons: any[]}} data the data returned by the `createSVG` module.
  * @param {string} to the path to export the files (Default: dist).
  * @return {undefined} Fullfills with `undefined` on success.
  */

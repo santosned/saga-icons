@@ -1,13 +1,13 @@
 const vectorize = require('./vectorize')
 
 /**
- * Builds the icon schema into an clean and valid SVG format.
+ * Create an valid SVG formatted string from schemas.
  *
  * @param {object} variantSchema the icon variant schema.
- * @param {{xml: boolean}} buildOptions the build options to control XML compatibility.
+ * @param {{xml: boolean}} buildOptions the createSVG options to control XML compatibility.
  * @return {Promise<{variant: string, icons: any[]}>} returns the variant name and all the SVG icons.
  */
-async function build(variantSchema, buildOptions = { xml: false }) {
+async function createSVG(variantSchema, buildOptions = { xml: false }) {
   const xml = buildOptions.xml ? true : false
 
   /**
@@ -57,4 +57,4 @@ async function build(variantSchema, buildOptions = { xml: false }) {
   return { variant, icons: vectors }
 }
 
-module.exports = build
+module.exports = createSVG
