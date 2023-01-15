@@ -54,7 +54,6 @@ Saga Icons uses [Node.js](https://nodejs.org/en/about/) to generate icons, so if
 
 - [Git](https://git-scm.com/downloads)
 - [Node latest LTS version](https://nodejs.org/en/download/)
-- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable) (Optional)
 
 ### Build system
 
@@ -73,8 +72,8 @@ To avoid unexpected behaviors the [build system](#build-system) should be 100% t
 You can run tests by:
 
 - Clone and open this [repo](https://github.com/santosned/saga-icons.git)
-- Run `yarn` to install the dependencies.
-- Run `yarn test` to test the code base.
+- Run `npm i` to install the dependencies.
+- Run `npm test` to test the code base.
 
 Testing the main functionalities is extremely important, so keep in mind to add or update tests when needed.
 
