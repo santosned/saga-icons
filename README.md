@@ -1,5 +1,7 @@
 # Saga Icons
 
+![GitHub](https://img.shields.io/github/license/santosned/saga-icons?style=flat&colorA=black&colorB=black)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/santosned/saga-icons/nodejs-cli.yml?style=flat&colorA=black&colorB=black)
 ![GitHub issues](https://img.shields.io/github/issues/santosned/saga-icons?style=flat&colorA=black&colorB=black)
 
 A **open-source** collection of [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) icons for the web. Striving to build modern, clean and consistent icons following the [Scalable Vector Graphics (SVG) 2](https://www.w3.org/TR/SVG/) specifications.
