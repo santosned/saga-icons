@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - 'main'
+      - 'workflows/**'
   pull_request:
     branches:
       - 'main'
+      - 'workflows/**'
 
 jobs:
   test:
