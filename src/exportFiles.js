@@ -13,6 +13,8 @@ const path = require('path')
 async function exportFiles(data, to = 'icons', compressData = false) {
   const { variant, type, icons } = data
   const outDir = path.resolve(__dirname, '../', to, variant, type)
+  const licenseFile = path.resolve(__dirname, '../', 'LICENSE.txt')
+  const licenseOutFile = path.resolve(outDir, 'LICENSE.txt')
 
   try {
     await fs.mkdir(outDir, { recursive: true })
@@ -29,6 +31,8 @@ async function exportFiles(data, to = 'icons', compressData = false) {
         }
       })
     )
+
+    await fs.copyFile(licenseFile, licenseOutFile)
 
     if (!compressData) return undefined
 
