@@ -15,6 +15,7 @@ Hi! Thanks for the interest in contributing 🤗
   - [Development](#development)
     - [Dependencies](#dependencies)
     - [Build system](#build-system)
+      - [Release build](#release-build)
     - [Testing](#testing)
     - [Schemas](#schemas)
     - [SVG designs](#svg-designs)
@@ -61,9 +62,13 @@ Saga Icons uses [Node.js](https://nodejs.org/en/about/) to generate icons, so if
   <img alt="Saga Icons Build system" src="docs/assets/build-system-diagram.webp">
 </div>
 
-The build system should be able to asynchronously generate multiple customizable [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) files from one simple [JSON](src/schemas/solid.json) file.
+The build system should be able to asynchronously generate multiple customizable [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) files from one simple [JSON schema](src/schemas/solid.json) file.
 
 You are welcome to contribute to the improvement of this process by fixing bugs, improving performance, typos, documentation, or workflow.
+
+#### Release build
+
+The build system also prepares the generated SVG files for the release files in Github by compressing them into a single zip file using the [adm-zip](https://github.com/cthackers/adm-zip) library.
 
 ### Testing
 
@@ -96,13 +101,13 @@ To add icons at the `src/schemas`, you should follow the format bellow:
 }
 ```
 
-The example above, using the build script, would generate something like (`dist/solid/mock-empty-example-24x24.svg`):
+The example above, using the build script, would generate something like (`icons/solid/web/mock-empty-example-24x24.svg`):
 
 ```svg
 <svg viewBox="0 0 24 24" width="24" height="24"><g><path d="C 1.111 Z"/></g></svg>
 ```
 
-The [d (drawn)](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d) attribute is the only thing from the [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) icons that are stored inside the [schema](src/schemas/solid.json).
+The [d (drawn)](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d) attribute is the only thing from the designed [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) icons that are stored inside the [JSON schema](src/schemas/solid.json).
 
 This allows us to maintain a clean [schema](src/schemas/solid.json) file whilst easily customizing and generating hundreds of [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) files.
 

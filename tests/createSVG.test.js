@@ -7,7 +7,8 @@ describe('createSVG', () => {
 
     expect(data).toHaveProperty('variant')
     expect(data).toHaveProperty('icons')
-    expect(data.variant).toBe('mock/web-icons')
+    expect(data.variant).toBe('mock')
+    expect(data.type).toBe('web')
     expect(data.icons).toHaveLength(schemas.mock.icons.length)
   })
 
@@ -27,7 +28,8 @@ describe('createSVG', () => {
 
     expect(data).toHaveProperty('variant')
     expect(data).toHaveProperty('icons')
-    expect(data.variant).toBe('mock/xml-icons')
+    expect(data.variant).toBe('mock')
+    expect(data.type).toBe('xml')
 
     const { svg, filename } = data.icons[0]
 

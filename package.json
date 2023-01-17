@@ -5,7 +5,8 @@
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint --exit-on-fatal-error --color --ext .js --fix .",
-    "build": "node ./src/index.js -o ./icons",
+    "build": "node ./src/index.js",
+    "build:release": "node ./src/index.js --compress --outDir ./dist",
     "test": "jest",
     "test:lint": "eslint . --format unix --max-warnings 1",
     "test:format": "prettier --check ."
@@ -30,6 +31,7 @@
     "prettier": "^2.8.2"
   },
   "dependencies": {
+    "adm-zip": "^0.5.10",
     "yargs": "^17.6.2"
   }
 }

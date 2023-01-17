@@ -5,7 +5,7 @@ const vectorize = require('./vectorize')
  *
  * @param {object} variantSchema the icon variant schema.
  * @param {{xml: boolean}} buildOptions the createSVG options to control XML compatibility.
- * @return {Promise<{variant: string, icons: any[]}>} returns the variant name and all the SVG icons.
+ * @return {Promise<{variant: string, type: string, icons: any[]}>} returns the variant name and all the SVG icons.
  */
 async function createSVG(variantSchema, buildOptions = { xml: false }) {
   const xml = buildOptions.xml ? true : false
@@ -15,7 +15,8 @@ async function createSVG(variantSchema, buildOptions = { xml: false }) {
    */
   const size = 24
 
-  const variant = `${variantSchema.name}/${xml ? 'xml' : 'web'}-icons`
+  const variant = variantSchema.name
+  const type = xml ? 'xml' : 'web'
   const schemas = Object.keys(variantSchema.icons)
 
   const XMLSchema = !xml ? undefined : require('./schemas/XML.json')
@@ -54,7 +55,7 @@ async function createSVG(variantSchema, buildOptions = { xml: false }) {
     })
   )
 
-  return { variant, icons: vectors }
+  return { variant, type, icons: vectors }
 }
 
 module.exports = createSVG
