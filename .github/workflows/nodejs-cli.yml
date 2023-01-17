@@ -5,10 +5,12 @@ on:
     branches:
       - 'main'
       - 'workflows/**'
+      - 'build/**'
   pull_request:
     branches:
       - 'main'
       - 'workflows/**'
+      - 'build/**'
 
 jobs:
   test:

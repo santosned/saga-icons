@@ -5,8 +5,10 @@
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint --exit-on-fatal-error --color --ext .js --fix .",
+    "dist:xml-icons": "node ./src/index.js --xml --compress --outDir ./dist",
+    "dist:web-icons": "node ./src/index.js --compress --outDir ./dist",
     "build": "node ./src/index.js",
-    "build:release": "node ./src/index.js --compress --outDir ./dist",
+    "build:release": "npm run dist:web-icons && npm run dist:xml-icons",
     "test": "jest",
     "test:lint": "eslint . --format unix --max-warnings 1",
     "test:format": "prettier --check ."
