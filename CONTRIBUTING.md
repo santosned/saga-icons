@@ -1,145 +1,92 @@
-# How To Contribute
+# Contributing to Saga Icons
 
-Hi! Thanks for the interest in contributing 🤗
+Thank you for the interest in contributing 😊
 
-🎯 The goal here is to make everything as transparent and easy as possible.
+Any contribution you make will be published at [github.com/santosned/saga-icons](https://github.com/santosned/saga-icons)
 
-**Table of Contents:**
+Read our [Code of Conduct](CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
 
-- [How To Contribute](#how-to-contribute)
-  - [License](#license)
-  - [Github](#github)
-    - [Reporting bugs](#reporting-bugs)
-    - [Requesting features](#requesting-features)
-    - [Requesting icons](#requesting-icons)
-  - [Development](#development)
-    - [Dependencies](#dependencies)
-    - [Build system](#build-system)
-      - [Release build](#release-build)
-    - [Testing](#testing)
-    - [Schemas](#schemas)
-    - [SVG designs](#svg-designs)
-      - [Adding to the repo](#adding-to-the-repo)
+> On Github use the table of contents button in the top left corner of this document to easily go to a certain section of this guide.
 
-## License
+## Newcomers guide
 
-🤝 By contributing, you agree that your contributions will be licensed under the [project license](LICENSE.txt).
+Welcome 🤗 see our [README](README.md) file to get an overview of the project. Here are some resources to help you get started with open source contributions:
 
-## Github
+- [Finding ways to contribute to open source on GitHub](https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github)
+- [Setting up Git](https://docs.github.com/en/get-started/quickstart/set-up-git)
+- [Github Flow](https://docs.github.com/en/get-started/quickstart/github-flow)
+- [Collaborating with Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests)
 
-The development is hosted at [Github](https://github.com/santosned/saga-icons), keeping track of issues, features, and more.
+## Getting started
 
-🌐 **all issues** should be **written in English**, with a **clear and concise description** of the issue.
+### Issues
 
-It's also recommended that you **search** for any **existing issues** related to your problem before creating a new one.
+Please don't file an issue to ask a question. You'll get faster results using the resources bellow:
 
-### Reporting bugs
+- [Github Discussions, the official Saga Icons message board](https://github.com/santosned/saga-icons/discussions)
 
-You can easily report bugs at [Github Issues](https://github.com/santosned/saga-icons/issues).
+#### Create new issues
 
-### Requesting features
+If you spot a problem within this project, [search if an issue already exists](https://github.com/santosned/saga-icons/issues?q=is%3Aissue+is%3Aopen). If a related issue doesn't exist, you can open a new issue using a relevant [issue template](https://github.com/santosned/saga-icons/issues/new/choose).
 
-This project welcomes your suggestions and new ideas, you are free to do so at [Github Issues](https://github.com/santosned/saga-icons/issues) or [Github Discussions](https://github.com/santosned/saga-icons/discussions).
+#### Solve an issue
 
-### Requesting icons
+Search through our [open issues](https://github.com/santosned/saga-icons/issues) to find one that interest you. Generally, no issue will be assign to anyone. If you find one, you are welcome to open a PR with a fix.
 
-While in early development, it's expected that the project will offer fewer icons than when in an stable release. Even though, you can still request for a specific icon at [Github Issues](https://github.com/santosned/saga-icons/issues).
+### Make changes
 
-This allows your **Icon Request** to be placed at [Github Projects](https://github.com/santosned/saga-icons/projects), which then can become part of the [Backlog](https://github.com/users/santosned/projects/1).
+#### Make changes locally
 
-## Development
+1. Fork the repository.
 
-### Dependencies
+- Using Github Desktop:
+  - [Getting started with Github Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop) will guide you through setting up Desktop.
+  - Once Desktop is set up, you can use it to [fork the repo](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/cloning-and-forking-repositories-from-github-desktop)!
+- Using command line:
+  - [Fork the repo](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo#fork-an-example-repository) so that you can make your changes without affecting the original project until you're ready to merge them.
 
-Saga Icons uses [Node.js](https://nodejs.org/en/about/) to generate icons, so if you want to contribute to the source code, make sure to have installed the following:
+2. Install or update to **Node.js v18**. For more information, see the [Development Guide](docs/contributing/DEVELOPMENT.md).
+3. Create a working branch and start with your changes!
 
-- [Git](https://git-scm.com/downloads)
-- [Node latest LTS version](https://nodejs.org/en/download/)
+### Commit your update
 
-### Build system
+Once you are satisfied with the modifications, commit them. Remember to conduct a **self-evaluation** to facilitate the review process.
 
-<div align="center">
-  <img alt="Saga Icons Build system" src="docs/assets/build-system-diagram.webp">
-</div>
+### Pull Request
 
-The build system should be able to asynchronously generate multiple customizable [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) files from one simple [JSON schema](src/schemas/solid.json) file.
+When you're finished with the changes, create a pull request, also known as a PR.
 
-You are welcome to contribute to the improvement of this process by fixing bugs, improving performance, typos, documentation, or workflow.
+- Fill the "Ready for review" template so that we can review your PR. This template helps reviewers understand your changes as well as the purpose of your pull request.
+- If you are resolving an issue, remember to link the PR to it.
+- [Allow maintainer edits](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork) to be enabled so that the branch may be modified for a merging. After you submit your PR, the maintainer will examine it.
+- We may ask questions or request additional information.
+  We may ask for changes to be made before a PR can be merged, either using [suggested changes](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/incorporating-feedback-in-your-pull-request) or pull request comments. After you can make changes in your fork, then commit them to your branch.
+- As you update your PR and apply changes, mark each conversation as resolved.
+- If you run into any merge issues, checkout this [Git Tutorial](https://github.com/skills/resolve-merge-conflicts) to help you resolve merge conflicts and other issues.
 
-#### Release build
+### Your PR is merged!
 
-The build system also prepares the generated SVG files for the release files in Github by compressing them into a single zip file using the [adm-zip](https://github.com/cthackers/adm-zip) library.
+Congratulations 🎉 and thank you for the effort!
 
-### Testing
+Now you are part of the Saga Icons community ✨
 
-To avoid unexpected behaviors the [build system](#build-system) should be 100% tested to ensure consistency in each of the [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) files.
+[See how else you can contribute](docs/contributing/TYPES_OF_CONTRIBUTIONS.md).
 
-You can run tests by:
+## Styleguides
 
-- Clone and open this [repo](https://github.com/santosned/saga-icons.git)
-- Run `npm i` to install the dependencies.
-- Run `npm test` to test the code base.
+### Git Commit Messages
 
-Testing the main functionalities is extremely important, so keep in mind to add or update tests when needed.
+- Use the present tense ("Add" instead of "Added")
+- Avoid long first line messages, keep at 72 characters or less
+- Reference issues or pull requests after the first line
+- When only change documentation, include `[ci skip]` in the commit title. [See more about skipping workflows](https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs)
 
-### Schemas
+### JavaScript code
 
-To add icons at the `src/schemas`, you should follow the format bellow:
+- Avoid platform-dependent code
+- Write clear and concise JSDoc for functions
+- Keep the names of objects, functions, or variables informative and brief so that no further documentation is required to understand them.
 
-```jsonc
-// src/schemas/solid.json
-{
-  "name": "solid", // The icons schema variant name
-  "icons": [
-    // Newest icons...
-    {
-      "keywords": ["mock", "empty", "example"], // List of words that describes the icon (e.g. ['searh', 'find'])
-      "drawn": "C 1.111 Z" // The d (drawn) attribute from the path element.
-    }
-    // Oldest icons...
-  ]
-}
-```
+### SVG icons
 
-The example above, using the build script, would generate something like (`icons/solid/web/mock-empty-example-24x24.svg`):
-
-```svg
-<svg viewBox="0 0 24 24" width="24" height="24"><g><path d="C 1.111 Z"/></g></svg>
-```
-
-The [d (drawn)](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d) attribute is the only thing from the designed [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) icons that are stored inside the [JSON schema](src/schemas/solid.json).
-
-This allows us to maintain a clean [schema](src/schemas/solid.json) file whilst easily customizing and generating hundreds of [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) files.
-
-### SVG designs
-
-If you're a designer, remember to setup your SVG editor (e.g. [inkscape](https://inkscape.org/)) to follow the specifications bellow:
-
-- SVG [viewBox="0 0 24 24"](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox) together with height and width of `24` pixels;
-- Max vector element [height](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/height) and [width](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/width) of `16` pixels;
-
-Before adding to the [schema file](src/schemas/solid.json) make sure that the follow are met:
-
-- Convert your vector to a single [path](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path) element;
-- Make sure there's no additional styles (e.g. [strokes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes)) or [transform attributes](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform).
-- Align vector to the center of the [viewBox](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox);
-
-A valid SVG would be something like this:
-
-```svg
-<svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-  <g>
-    <path d="M 10.712 4.471 C 11.456 3.843 12.544 3.843 13.287 4.471 L 19.278 9.525 C 19.728 9.904 19.988 10.462 19.988 11.051 L 19.988 18.447 C 19.988 19.305 19.293 20 18.434 20 L 15.772 20 C 14.914 20 14.218 19.305 14.218 18.447 L 14.218 14.735 C 14.218 14.368 13.92 14.069 13.553 14.069 L 10.446 14.069 C 10.079 14.069 9.781 14.368 9.781 14.735 L 9.781 18.447 C 9.781 19.305 9.086 20 8.228 20 L 5.565 20 C 4.708 20 4.012 19.305 4.012 18.447 L 4.012 11.051 C 4.012 10.462 4.271 9.904 4.721 9.525 L 10.712 4.471 Z" style=""/>
-  </g>
-</svg>
-```
-
-Next, copy the [d (drawn)](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d) attribute from the path element and paste it into the icon schema.
-
-Don't forget to add keywords to describe the icon 👌
-
-#### Adding to the repo
-
-After developing the [valid SVG icon](#svg-designs) and [adding it to the schema](#schemas), you can [commit](https://git-scm.com/docs/git-commit) your changes to the schema and open a [PR](https://github.com/santosned/saga-icons/pulls).
-
-⚠️ [PR's](https://github.com/santosned/saga-icons/pulls) to add new icons should add/change only one icon at time.
+Take a look in our [design guide](docs/contributing/DESIGN_OF_ICONS.md)
